@@ -19,7 +19,17 @@
 
 
 # Body
-
+def count(string, letter):
+	count = 0
+	index = 0
+	while index < len(string):
+		if letter == string[index]:
+			count = count + 1
+			index = index + 1
+		else:
+			count = count
+			index = index + 1
+	print ("The letter '" + str(letter) + "' appears in the word '" + str(string) + "' " + str(count) + ' time(s).')
 
 
 
@@ -28,7 +38,11 @@ def main():
 
     # Remove print("Hello World!") and add several functions calls to count()
     # below, passing various strings and letters
-    print("Hello World!") 
+    #print("Hello World!") 
+    count('emily','l')
+    count('emily', 'z')
+    count('mississippi','s')
+    count('squirrelled','q')
     
 
 if __name__ == '__main__':
