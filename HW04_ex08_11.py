@@ -13,16 +13,21 @@
 # Body
 
 def any_lowercase1(s):
-    """Explain what is wrong, if anything, here.
+    """if the first letter of the string is uppercase, this returns FALSE becuase the first
+    time through the IF condition is not met, so it goes on to the ELSE statement which
+    automatically returns FALSE. 
     """
     for c in s:
         if c.islower():
             return True
         else:
             return False
+        print c
 
 def any_lowercase2(s):
-    """Explain what is wrong, if anything, here.
+    """isn't this just checking if the string 'c' is lowercase? which it always will be because
+    it is given as lower. If you change it to 'C'.islower() then it always returns FALSE. The
+    only time this doesn't return TRUE is if there are no characters in the string..
     """
     for c in s:
         if 'c'.islower():
@@ -31,14 +36,15 @@ def any_lowercase2(s):
             return 'False'
 
 def any_lowercase3(s):
-    """Explain what is wrong, if anything, here.
+    """this just returns TRUE or FALSE for whether or not the last character in the string is
+    uppercase or lowercase.
     """
     for c in s:
         flag = c.islower()
     return flag
 
 def any_lowercase4(s):
-    """Explain what is wrong, if anything, here.
+    """I don't understand this one.
     """
     flag = False
     for c in s:
@@ -46,7 +52,8 @@ def any_lowercase4(s):
     return flag
 
 def any_lowercase5(s):
-    """Explain what is wrong, if anything, here.
+    """as it goes through the letters, as soon as it gets to an uppercase letter
+    it returns FALSE. therefore it is looking for any upper, not any lower
     """
     for c in s:
         if not c.islower():
@@ -59,8 +66,8 @@ def main():
     # Remove print("Hello World!") and for each function above that is wrong, 
     # call that function with a string for which the function returns
     # incorrectly.
-    # ex.: any_lowercase_("thisstringmessesupthefunction")
-    print("Hello World!")
+    print any_lowercase5("thisstring")
+    print any_lowercase5("ThisstringmessesupthefunCtion")
     
 
 if __name__ == '__main__':
