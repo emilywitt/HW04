@@ -16,8 +16,14 @@
 # If the string length is less than 3, leave it unchanged.
 # Return the resulting string.
 def verbing(s):
-  # +++your code here+++
-  return
+    while len(s) >= 3:
+        if s[-3:] != 'ing':
+            new_string = s + 'ing'
+            return new_string
+        else:
+            new_string = s + 'ly'
+            return new_string
+    return s
 
 
 # E. not_bad
@@ -29,8 +35,12 @@ def verbing(s):
 # So 'This dinner is not that bad!' yields:
 # This dinner is good!
 def not_bad(s):
-  # +++your code here+++
-  return
+    nota = s.find('not')
+    bad = s.find('bad')
+    if nota < bad:
+        new_s = s.replace(s[nota:bad+3],'good')
+        return new_s
+    return s
 
 
 # F. front_back
@@ -41,8 +51,20 @@ def not_bad(s):
 # Given 2 strings, a and b, return a string of the form
 #  a-front + b-front + a-back + b-back
 def front_back(a, b):
-  # +++your code here+++
-  return
+    if len(a)%2 == 0:
+        front_a = a[:len(a)/2]
+        back_a = a[len(a)/2:]
+    else:
+        front_a = a[:(len(a)/2)+1]
+        back_a = a[len(a)/2+1:]
+    if len(b)%2 == 0:
+        front_b = b[:len(b)/2]
+        back_b = b[len(b)/2:]
+    else:
+        front_b = b[:(len(b)/2)+1]
+        back_b = b[len(b)/2+1:]
+    new_string = front_a + front_b + back_a + back_b
+    return new_string
 
 
 # Simple provided test() function used in main() to print
@@ -58,10 +80,11 @@ def test(got, expected):
 # main() calls the above functions with interesting inputs,
 # using the above test() to check if the result is correct or not.
 def main():
-  print 'verbing'
-  test(verbing('hail'), 'hailing')
-  test(verbing('swiming'), 'swimingly')
-  test(verbing('do'), 'do')
+  #print 'verbing'
+  print verbing('hail')
+  print test(verbing('hail'), 'hailing')
+  print test(verbing('swiming'), 'swimingly')
+  print test(verbing('do'), 'do')
 
   print
   print 'not_bad'
