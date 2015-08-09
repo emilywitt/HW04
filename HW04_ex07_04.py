@@ -21,17 +21,27 @@
 
 ################################################################################
 # Imports
-
+import math
 
 # Body
+def eval_loop():
+	while True:
+		u = raw_input('Enter an expression to be evaluated> ')
+		if u == 'done':
+			break
+		n = eval(u)
+		print n
+	print n
 
-
-
+# get an error message if the user doesn't input a proper expression (ie. strings)
+# that can't be evaluated as integers. Is there any way to handle that without
+# using Try? I think at this point in the material (ch 7) Try hasn't been covered
+# yet so I'm thinking there should be?
 
 ################################################################################
 def main():
-    pass # Remove this line and uncomment below once eval_loop is defined.
-    # eval_loop()
+    #pass # Remove this line and uncomment below once eval_loop is defined.
+    eval_loop()
     
 
 if __name__ == '__main__':
